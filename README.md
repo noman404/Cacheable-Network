@@ -11,5 +11,5 @@ A Cacheable Network Library For Android Application
 
 - in application level *build.gradle* add the *Cacheable-Network* dependency
     
-    `implementation 'com.github.noman404:Cacheable-Network:c1.0'`
+    `implementation 'com.github.noman404:Cacheable-Network:rc1.0'`
 

@@ -11,3 +11,4 @@ A Cacheable Network Library For Android Application
     
     `implementation 'com.github.noman404:Cacheable-Network:rc1.0'`
 
+*Fork is welcome, but make sure you've unit test your code before make pull request.*

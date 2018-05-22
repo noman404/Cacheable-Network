@@ -4,7 +4,7 @@ package al.com.cacheable.network.data;
  * Created by Al Noman on 8/17/2017.
  */
 
-public interface DBKeys {
+interface DBKeys {
 
     int DB_VER = 1;
 

@@ -21,12 +21,13 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:' + project.ext.supportAppcompat
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
     implementation project(':cacheable_network')
+//    implementation 'com.github.noman404:Cacheable-Network:c1.0'
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    testImplementation 'junit:junit:' + project.ext.junit
+    androidTestImplementation 'com.android.support.test:runner:' + project.ext.testRunner
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:' + project.ext.espresso
 }

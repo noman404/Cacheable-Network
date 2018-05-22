@@ -5,28 +5,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import al.com.cacheable.network.adapter.ApiAdapter;
 import al.com.cacheable.network.enums.NetworkStatus;
 import al.com.cacheable.network.listener.NetworkResponse;
 
+
 public class MainActivity extends AppCompatActivity implements NetworkResponse {
 
     private ApiAdapter apiAdapter;
-    private final String sampleEndpoint = "https://jsonplaceholder.typicode.com/posts/1";
+    private final String SAMPLE_ENDPOINT = "https://jsonplaceholder.typicode.com/posts/1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements NetworkResponse {
 
         apiAdapter.JsonObjectRequest(
                 Request.Method.GET,
-                sampleEndpoint,
+                SAMPLE_ENDPOINT,
                 null,
                 null,
                 null,
@@ -61,11 +52,11 @@ public class MainActivity extends AppCompatActivity implements NetworkResponse {
 
     @Override
     public void onErrorResponse(String url, String error, Object reference) {
-
+        Log.d(getClass().getName(), error);
     }
 
     @Override
     public void onAuthError(NetworkStatus networkStatus, Object reference) {
-
+        Log.d(getClass().getName(), networkStatus.name());
     }
 }

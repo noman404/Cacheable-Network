@@ -12,7 +12,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -22,7 +21,8 @@ import al.com.cacheable.network.enums.NetworkStatus;
 import al.com.cacheable.network.listener.NetworkResponse;
 import al.com.cacheable.network.request.JSONRequest;
 import al.com.cacheable.network.request.MultipartFileRequest;
-import al.com.cacheable.network.util.Utils;
+import al.com.cacheable.network.util.Datetime.DateTime;
+import al.com.cacheable.network.util.connectivity.Connectivity;
 
 /**
  * Created by User on 10/18/2016.
@@ -47,7 +47,7 @@ public class ApiAdapter extends BaseApiAdapter {
             Object reference,
             boolean useCache) {
 
-        if (Utils.isNetworkAvailable(context)) {
+        if (Connectivity.isNetworkAvailable(context)) {
 
             JSONRequest jsonRequest = new JSONRequest(
                     requestMethod,
@@ -90,7 +90,7 @@ public class ApiAdapter extends BaseApiAdapter {
             Object reference,
             boolean useCache) {
 
-        if (Utils.isNetworkAvailable(context)) {
+        if (Connectivity.isNetworkAvailable(context)) {
 
             JSONRequest jsonRequest = new JSONRequest(
                     requestMethod,
@@ -133,7 +133,7 @@ public class ApiAdapter extends BaseApiAdapter {
                               Object reference,
                               boolean useCache) {
 
-        if (Utils.isNetworkAvailable(context)) {
+        if (Connectivity.isNetworkAvailable(context)) {
 
             StringRequest jsonRequest = new StringRequest(
                     Request.Method.POST,
@@ -164,7 +164,6 @@ public class ApiAdapter extends BaseApiAdapter {
         }
     }
 
-
     @Override
     public void formDataRequest(
             String endpoint,
@@ -173,7 +172,7 @@ public class ApiAdapter extends BaseApiAdapter {
             Object reference,
             boolean useCache) {
 
-        if (Utils.isNetworkAvailable(context)) {
+        if (Connectivity.isNetworkAvailable(context)) {
 
             StringRequest jsonRequest = new StringRequest(
                     Request.Method.POST,
@@ -211,7 +210,7 @@ public class ApiAdapter extends BaseApiAdapter {
             final HashMap<String, String> params,
             Object reference) {
 
-        if (Utils.isNetworkAvailable(context)) {
+        if (Connectivity.isNetworkAvailable(context)) {
 
             MultipartFileRequest multipartFileRequest = new MultipartFileRequest(
                     endpoint,
@@ -244,10 +243,9 @@ public class ApiAdapter extends BaseApiAdapter {
     }
 
     private void cachedResponse(boolean useCache, String endpoint, Object reqParams, Object reference) {
+
         if (useCache) {
-
             if (db.isCacheAvailable(endpoint)) {
-
                 try {
                     new JsonResponseListener(reference, endpoint, true, reqParams == null ? null : reqParams.toString()).onResponse(new JSONObject(db.getCachedDataByUrl(endpoint)));
 
@@ -263,6 +261,7 @@ public class ApiAdapter extends BaseApiAdapter {
     }
 
     private class FileResponseListener implements Response.Listener<com.android.volley.NetworkResponse> {
+
         private Object reference;
 
         FileResponseListener(Object reference) {
@@ -304,7 +303,7 @@ public class ApiAdapter extends BaseApiAdapter {
                             endpoint,
                             response.toString(),
                             reqParams,
-                            Utils.getNow());
+                            DateTime.getNow());
             }
         }
 
@@ -338,7 +337,7 @@ public class ApiAdapter extends BaseApiAdapter {
                             endpoint,
                             response.toString(),
                             reqParams,
-                            Utils.getNow());
+                            DateTime.getNow());
             }
         }
     }
@@ -360,7 +359,7 @@ public class ApiAdapter extends BaseApiAdapter {
                 if (error instanceof TimeoutError) {
                     networkResponse.onErrorResponse(endpoint, "Request has Timeout", reference);
                 } else if (error instanceof NoConnectionError) {
-                    networkResponse.onErrorResponse(endpoint, "Failed to Connect Server !!! Internet Problem", reference);
+                    networkResponse.onErrorResponse(endpoint, "Failed to Connect Server..! Internet Problem", reference);
                 }
             } else {
                 if (error.networkResponse.statusCode == 404) {
@@ -374,7 +373,7 @@ public class ApiAdapter extends BaseApiAdapter {
                 } else if (error.networkResponse.statusCode == 500) {
                     networkResponse.onErrorResponse(endpoint, "Internal Server Error", reference);
                 } else {
-                    networkResponse.onErrorResponse(endpoint, "Unknown Error From Cache", reference);
+                    networkResponse.onErrorResponse(endpoint, "Unknown Error Status Code: " + error.networkResponse.statusCode, reference);
                 }
 
             }

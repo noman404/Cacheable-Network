@@ -13,15 +13,15 @@ import java.util.Map;
  * Created by Al Noman on 8/17/2017.
  */
 
-public class DBHelper extends SQLiteOpenHelper implements DBKeys {
+class DBHelper extends SQLiteOpenHelper implements DBKeys {
 
     private static volatile DBHelper mInstance = null;
 
     private DBHelper(Context context) {
-        super(context, null, null, DB_VER);
+        super(context, DB_NAME, null, DB_VER);
     }
 
-    public static DBHelper getInstance(Context ctx) {
+    static DBHelper getInstance(Context ctx) {
 
         if (mInstance == null) {
             synchronized (DBHelper.class) {

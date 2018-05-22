@@ -49,8 +49,8 @@ public class DBAdapter implements DBKeys {
             String url,
             String serverResponse,
             String params,
-            String createdAt
-    ) {
+            String createdAt) {
+
         ContentValues value = new ContentValues();
 
         value.put(CACHED_DATA, serverResponse);

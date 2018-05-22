@@ -23,6 +23,7 @@ public abstract class BaseApiAdapter {
     final RequestQueue requestQueue;
     final NetworkResponse networkResponse;
     final DBAdapter db;
+
     final int APP_SOCKET_TIMEOUT_MS = 15 * 1000;
     final int DEFAULT_MAX_RETRIES = 2;
 

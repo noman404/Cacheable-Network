@@ -2,6 +2,7 @@
 A Cacheable Network Library For Android Application 
 
 [![](https://jitpack.io/v/noman404/Cacheable-Network.svg)](https://jitpack.io/#noman404/Cacheable-Network)
+[![Build Status](https://travis-ci.org/noman404/Cacheable-Network.svg?branch=master)](https://travis-ci.org/noman404/Cacheable-Network)
 
 - in your top level *build.gradle* file add the **jitpack** dependency 
     

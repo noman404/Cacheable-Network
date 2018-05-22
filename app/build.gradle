@@ -26,6 +26,7 @@ dependencies {
 
     implementation project(':cacheable_network')
 //    implementation 'com.github.noman404:Cacheable-Network:c1.0'
+//    implementation 'com.github.noman404:Cacheable-Network:rc1.0'
 
     testImplementation 'junit:junit:' + project.ext.junit
     androidTestImplementation 'com.android.support.test:runner:' + project.ext.testRunner

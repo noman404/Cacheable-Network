@@ -1,0 +1,14 @@
+language: android
+android:
+        components:
+                - platform-tools
+                - build-tools-26.0.2
+                - android-26
+                - cacheable_network
+script:
+        - ./gradlew build
+before_install:
+        - chmod +x gradlew
+branches:
+        only:
+                - master

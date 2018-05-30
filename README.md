@@ -108,5 +108,4 @@ To receive the response from server you can use the interface `NetworkResponse` 
 
 To use the cache, pass the last paramater `boolean useCache` as `true` in every network call. You'll get cached data if you have stored them erlier, meaning to say, this module automatically store response as cache if you pass `useCache = true`. So, if you don't hit the endpoint with these method with `useCache = true`, you won't get cache data later.
 
-***Fork is welcome, but make sure you've unit test your code before make pull request.*
-**
+![Sample](https://github.com/noman404/Cacheable-Network/blob/master/graphics/uml.png?raw=true)

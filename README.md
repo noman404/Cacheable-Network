@@ -18,7 +18,9 @@ A Cacheable Network Library For Android Application
 
 The total scenario of network calling is to communicate with server and get back the result. So, for this two action using this library you need to instantiate `ApiAdapter` class to perform network call and invoke `NetworkResponse` interface to receive the results (to receive both error and success message)
 
-To perform a network call use following methods as per you endpoint type after creating the `ApiAdapter` Object:
+To perform a network call use following methods as per you endpoint type after creating the `ApiAdapter` instance.
+
+*(to use the cache, pass the last paramater `boolean useCache` as `true`, you'll get cached data if you have them erlier i.e. this module automatically store cache if you pass true to use later as cache, that means if you don't hit the endpoint with these method with `useCache = true`, you won't get cache data later.)*
 
 - To make a json object request,
 

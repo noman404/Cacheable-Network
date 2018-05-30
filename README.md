@@ -26,7 +26,7 @@ The total scenario of A network calling is to communicate with server then get b
 
 To perform a network call use following methods as per you endpoint type after creating the `ApiAdapter` instance.
 
-- To make a json object request,
+- **To make a json object request,**
 
 
     `public void JsonObjectRequest(
@@ -38,7 +38,7 @@ To perform a network call use following methods as per you endpoint type after c
                                            Object reference,
                                            boolean useCache);`
 
-- To make a jsonArray request,
+- **To make a jsonArray request,**
 
 
     `public void JsonArrayRequest(
@@ -50,7 +50,7 @@ To perform a network call use following methods as per you endpoint type after c
                                           Object reference,
                                           boolean useCache);`
 										  
-- To make a Plain String request,
+- **To make a Plain String request,**
 
 
     `public void StringRequest(
@@ -60,7 +60,7 @@ To perform a network call use following methods as per you endpoint type after c
                                        HashMap<String, String> params,
                                        Object reference,
                                        boolean useCache);`
-- To make a Form data request,
+- **To make a Form data request,**
 
 
     `public void formDataRequest(String endpoint,
@@ -69,7 +69,7 @@ To perform a network call use following methods as per you endpoint type after c
                                          Object reference,
                                          boolean useCache);`
 
-- To make a Multipart request (specially for files),
+- **To make a Multipart request (specially for files),**
 
 
    `public void MultipartFormDataRequest(String endpoint,
@@ -82,15 +82,15 @@ To perform a network call use following methods as per you endpoint type after c
 
 To receive the response from server you can use the interface `NetworkResponse` as the way you want (as innerclass, method level, class level), Once you implement the class you'll get
 
-- To receive the message whose status code 200. `String response` the server response, 
- `Object reference` is a optional reference object if you need. 
+- **To receive the message whose status code is 200. (`String response` the server response, 
+ `Object reference` is a optional reference object if you need.)** 
  
 
     `void onSuccessResponse(
             String response,
             Object reference);`
 
-- To receive the error respones, if occours.
+- **To receive the error respones, if occours.**
 
 
     `void onErrorResponse(
@@ -98,7 +98,7 @@ To receive the response from server you can use the interface `NetworkResponse` 
             String error,
             Object reference);`
 
-- To receive the authentication error respones, if occours only for status code `401` & `403`.
+- **To receive the authentication error respones, if occours only for status code `401` & `403`.**
 
 
     `void onAuthError(

@@ -4,6 +4,16 @@ A Cacheable Network Library For Android Application
 [![](https://jitpack.io/v/noman404/Cacheable-Network.svg)](https://jitpack.io/#noman404/Cacheable-Network)
 [![Build Status](https://travis-ci.org/noman404/Cacheable-Network.svg?branch=master)](https://travis-ci.org/noman404/Cacheable-Network)
 
+## **Intro**
+
+The total scenario of A network calling is to communicate with server then get back the result. So, to handle this two action using this library you need to instantiate `ApiAdapter` class to perform A network call and invoke `NetworkResponse` interface to receive the results (to receive both error and success message)
+	
+- Supports both (Standard):
+	- XML / JSON RESTful Service
+	- [JSON-RPC Service](https://en.wikipedia.org/wiki/JSON-RPC)
+
+## **Usage**
+
 - in your top level *build.gradle* file add the **jitpack** dependency 
     
     `maven { url 'https://jitpack.io' }`
@@ -11,15 +21,6 @@ A Cacheable Network Library For Android Application
 - in application level *build.gradle* add the *Cacheable-Network* dependency
     
     `implementation 'com.github.noman404:Cacheable-Network:1.0.2'`
-	
-	
-- Supports both:
-	- XML / JSON REST
-	- [JSON-RPC](https://en.wikipedia.org/wiki/JSON-RPC)
-
-## **Intro**
-
-The total scenario of A network calling is to communicate with server then get back the result. So, to handle this two action using this library you need to instantiate `ApiAdapter` class to perform A network call and invoke `NetworkResponse` interface to receive the results (to receive both error and success message)
 
 ## **Make A Network Call**
 

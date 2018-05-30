@@ -9,9 +9,16 @@ import al.com.cacheable.network.enums.NetworkStatus;
 
 public interface NetworkResponse {
 
-    void onSuccessResponse(String response, Object reference);
+    void onSuccessResponse(
+            String response,
+            Object reference);
 
-    void onErrorResponse(String endpoint, String error, Object reference);
+    void onErrorResponse(
+            String endpoint,
+            String error,
+            Object reference);
 
-    void onAuthError(NetworkStatus networkStatus, Object reference);
+    void onAuthError(
+            NetworkStatus networkStatus,
+            Object reference);
 }

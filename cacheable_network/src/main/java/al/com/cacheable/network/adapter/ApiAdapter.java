@@ -38,7 +38,7 @@ public class ApiAdapter extends BaseApiAdapter {
     }
 
     @Override
-    public void JsonObjectRequest(
+    public void jsonObjectRequest(
             int requestMethod,
             String endpoint,
             final HashMap<String, String> header,
@@ -81,7 +81,7 @@ public class ApiAdapter extends BaseApiAdapter {
     }
 
     @Override
-    public void JsonArrayRequest(
+    public void jsonArrayRequest(
             int requestMethod,
             String endpoint,
             final HashMap<String, String> header,
@@ -126,7 +126,7 @@ public class ApiAdapter extends BaseApiAdapter {
     }
 
     @Override
-    public void StringRequest(int requestMethod,
+    public void stringRequest(int requestMethod,
                               String endpoint,
                               final HashMap<String, String> header,
                               final HashMap<String, String> params,
@@ -204,7 +204,7 @@ public class ApiAdapter extends BaseApiAdapter {
     }
 
     @Override
-    public void MultipartFormDataRequest(
+    public void multipartFormDataRequest(
             String endpoint,
             final HashMap<String, String> header,
             final HashMap<String, String> params,

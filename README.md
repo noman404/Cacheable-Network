@@ -29,8 +29,8 @@ To perform a network call use following methods as per you endpoint type after c
 - **To make a json object request,**
 
 
-    `public void JsonObjectRequest(
-	                                       int requestMethod,
+    `public void jsonObjectRequest(
+	                                   int requestMethod,
                                            String endpoint,
                                            HashMap<String, String> header,
                                            HashMap<String, String> params,
@@ -41,8 +41,8 @@ To perform a network call use following methods as per you endpoint type after c
 - **To make a jsonArray request,**
 
 
-    `public void JsonArrayRequest(
-	                                      int requestMethod,
+    `public void jsonArrayRequest(
+	                                  int requestMethod,
                                           String endpoint,
                                           HashMap<String, String> header,
                                           HashMap<String, String> params,
@@ -53,8 +53,8 @@ To perform a network call use following methods as per you endpoint type after c
 - **To make a Plain String request,**
 
 
-    `public void StringRequest(
-	                                   int requestMethod,
+    `public void stringRequest(
+	                               int requestMethod,
                                        String endpoint,
                                        HashMap<String, String> header,
                                        HashMap<String, String> params,
@@ -72,7 +72,7 @@ To perform a network call use following methods as per you endpoint type after c
 - **To make a Multipart request (specially for files),**
 
 
-   `public void MultipartFormDataRequest(String endpoint,
+   `public void multipartFormDataRequest(String endpoint,
                                                   HashMap<String, String> header,
                                                   HashMap<String, String> params,
                                                   Object reference);`

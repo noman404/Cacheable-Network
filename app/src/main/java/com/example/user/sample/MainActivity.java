@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements NetworkResponse {
 
     void doRequest() throws JSONException {
 
-        apiAdapter.JsonObjectRequest(
+        apiAdapter.jsonObjectRequest(
                 Request.Method.GET,
                 SAMPLE_ENDPOINT,
                 null,

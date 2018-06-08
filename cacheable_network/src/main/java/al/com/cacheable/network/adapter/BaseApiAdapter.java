@@ -34,7 +34,7 @@ public abstract class BaseApiAdapter {
         this.networkResponse = networkResponse;
     }
 
-    public abstract void JsonObjectRequest(int requestMethod,
+    public abstract void jsonObjectRequest(int requestMethod,
                                            String endpoint,
                                            HashMap<String, String> header,
                                            HashMap<String, String> params,
@@ -42,7 +42,7 @@ public abstract class BaseApiAdapter {
                                            Object reference,
                                            boolean useCache);
 
-    public abstract void JsonArrayRequest(int requestMethod,
+    public abstract void jsonArrayRequest(int requestMethod,
                                           String endpoint,
                                           HashMap<String, String> header,
                                           HashMap<String, String> params,
@@ -50,7 +50,7 @@ public abstract class BaseApiAdapter {
                                           Object reference,
                                           boolean useCache);
 
-    public abstract void StringRequest(int requestMethod,
+    public abstract void stringRequest(int requestMethod,
                                        String endpoint,
                                        HashMap<String, String> header,
                                        HashMap<String, String> params,
@@ -63,7 +63,7 @@ public abstract class BaseApiAdapter {
                                          Object reference,
                                          boolean useCache);
 
-    public abstract void MultipartFormDataRequest(String endpoint,
+    public abstract void multipartFormDataRequest(String endpoint,
                                                   HashMap<String, String> header,
                                                   HashMap<String, String> params,
                                                   Object reference);

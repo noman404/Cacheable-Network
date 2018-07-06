@@ -3,6 +3,8 @@ A Cacheable Network Library For Android Application
 
 [![](https://jitpack.io/v/noman404/Cacheable-Network.svg)](https://jitpack.io/#noman404/Cacheable-Network)
 [![Build Status](https://travis-ci.org/noman404/Cacheable-Network.svg?branch=master)](https://travis-ci.org/noman404/Cacheable-Network)
+[![API](https://img.shields.io/badge/API-17%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=17)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Cacheable--Network-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7016)
 
 ## **Intro**
 
